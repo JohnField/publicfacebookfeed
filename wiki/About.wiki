@@ -1,0 +1,12 @@
+#summary About page, gratitous wiki edit test.
+= Introduction =
+
+Provide a feed of a user's Facebook activity with 'public' visibility. 
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
