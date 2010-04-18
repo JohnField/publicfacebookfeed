@@ -18,8 +18,8 @@ $items = $feedObj->getItems();
  */
 $titleTruncateLength = 100;
 
+//fallback
 if (!is_array($items)) {
-	//fallback
 	$items = array (
 		array (
 			'created_time' => time(),
@@ -69,4 +69,5 @@ foreach ($items as $item) {
 //$feedObj->dump($rssItems);
 
 header('Content-Type:application/rss');
+
 echo make_rss($rssItems, $userID);
