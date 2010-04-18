@@ -10,6 +10,7 @@ class PublicFacebookFeed {
 	public $client;
 	public $userID;
 	public $db;
+
 	/**
 	 * 5 is 5 items, i.e. an album with 10 pictures counts as 10 items. Possibly comments too. Basically, turn this off.
 	 */
@@ -49,7 +50,7 @@ class PublicFacebookFeed {
 			$this->halt("\$userID $this->userID doesn't have '$perms' permissions");
 		}
 
-		$this->getLocalSessionKey($userID);
+		$this->getLocalSessionKey();
 		if (!$this->client->api_client->session_key) {
 			$this->halt("\$userID $this->userID doesn't have a session key");
 		}
