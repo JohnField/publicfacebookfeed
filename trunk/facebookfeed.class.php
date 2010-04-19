@@ -2,9 +2,15 @@
 
 
 /**
- * Facebook Public Status Feed class
+ * Public Facebook Status Feed
+ * http://vodex.net/public-facebook-feed/
+ * http://code.google.com/p/publicfacebookfeed/
+ */
+
+/**
+ * Facebook Feed class
  * Essentially a wrapper to the Facebook Platform
- * to read public streams using Offline Access extended permissions
+ * to read public activities via streams and extended permissions
  */
 class PublicFacebookFeed {
 	public $client;

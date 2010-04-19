@@ -1,7 +1,16 @@
 <?php
 
 
-// via http://www.w3schools.com/rss/rss_item.asp
+/**
+ * Public Facebook Status Feed
+ * http://vodex.net/public-facebook-feed/
+ * http://code.google.com/p/publicfacebookfeed/
+ */
+
+/**
+ * TODO: use Zend Framework or similar mature platform to create feeds,
+ * with caching to avoid polling Facebook
+ */
 function make_rss($items, $user_id) {
 	$now = date('r');
 
@@ -9,27 +18,14 @@ function make_rss($items, $user_id) {
 <?xml version="1.0"?>
 <rss version="2.0">
    <channel>
-      <title>Public Facebook Statuses</title>
-      <link>http://vodex.net/publicstatusfeed/rss.php?uid=$user_id</link>
-      <description>Public Facebook Statuses for http://www.facebook.com/profile.php?id=$user_id</description>
+      <title>Public Facebook Status Feed for user ID $user_id</title>
+      <link>http://vodex.net/publicfacebookfeed/rss.php?uid=$user_id</link>
+      <description>Public Facebook Status Feed for http://www.facebook.com/profile.php?id=$user_id</description>
       <language>en-gb</language>
 	  <pubDate>$now</pubDate>
 HTML;
 	foreach ($items as $item) {
-		$return .= make_rss_item($item);
-	}
-	$return .=<<<HTML
-
-   </channel>
-</rss>
-HTML;
-
-	return $return;
-}
-
-function make_rss_item($item) {
-	//<description>saafddssd<a href="http://commentisfree.guardian.co.uk/stevebell/index.html><img alt="" src="{$item['url']}"/></a></description>
-	$return =<<<HTML
+		$return .=<<<HTML
       <item>
          <title>{$item['headline']}</title>
          <link>{$item['url']}</link>
@@ -39,9 +35,12 @@ function make_rss_item($item) {
 			{$item['description']}
          </description>
       </item>
-
 HTML;
+	}
+	$return .=<<<HTML
+   </channel>
+</rss>
+HTML;
+
 	return $return;
 }
-
-
