@@ -2,7 +2,9 @@
 
 
 /**
- * Facebook Public Status Feed
+ * Public Facebook Status Feed
+ * http://vodex.net/public-facebook-feed/
+ * http://code.google.com/p/publicfacebookfeed/
  */
 
 require_once ($_SERVER['DOCUMENT_ROOT'] . '/lib/adodb/adodb.inc.php');
