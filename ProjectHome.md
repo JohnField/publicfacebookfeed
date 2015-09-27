@@ -1,0 +1,1 @@
+Extracts a user's public status updates from their Facebook activity stream. See http://vodex.net/public-facebook-feed/ for more information.
